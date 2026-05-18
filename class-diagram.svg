@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240" role="img" aria-labelledby="title desc">
+  <title id="title">Wedding Planner UML Class Diagram</title>
+  <desc id="desc">Class diagram for the Wedding Planning and Vendor Booking System showing users, vendors, events, bookings, payments, budgets, feedback, and their relationships.</desc>
+  <defs>
+    <style>
+      .page { fill: #f7f8fb; }
+      .box { fill: #ffffff; stroke: #2c3e50; stroke-width: 2; rx: 8; }
+      .abstract { fill: #fdf7ea; }
+      .interface { fill: #edf7f2; }
+      .head { fill: #2c3e50; }
+      .head2 { fill: #536878; }
+      .title { font: 700 18px Arial, sans-serif; fill: #ffffff; }
+      .stereo { font: 600 13px Arial, sans-serif; fill: #ffffff; }
+      .text { font: 14px Consolas, "Courier New", monospace; fill: #1f2933; }
+      .small { font: 12px Arial, sans-serif; fill: #34495e; }
+      .rel { stroke: #34495e; stroke-width: 2; fill: none; }
+      .dash { stroke-dasharray: 8 6; }
+      .label { font: 13px Arial, sans-serif; fill: #2c3e50; }
+    </style>
+    <marker id="triangle" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 1 1 L 15 7 L 1 13 Z" fill="#f7f8fb" stroke="#34495e" stroke-width="1.5"/>
+    </marker>
+    <marker id="diamond" markerWidth="18" markerHeight="14" refX="1" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 1 7 L 8 1 L 15 7 L 8 13 Z" fill="#f7f8fb" stroke="#34495e" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <rect class="page" width="1600" height="1240"/>
+  <text x="800" y="44" text-anchor="middle" style="font:700 28px Arial, sans-serif; fill:#1f2933;">Wedding Planning and Vendor Booking System - UML Class Diagram</text>
+
+  <g transform="translate(70 90)">
+    <rect class="box" width="280" height="210"/>
+    <rect class="head" width="280" height="42"/>
+    <text class="title" x="140" y="27" text-anchor="middle">User</text>
+    <text class="text" x="16" y="70">- id: String</text>
+    <text class="text" x="16" y="92">- name: String</text>
+    <text class="text" x="16" y="114">- email: String</text>
+    <text class="text" x="16" y="136">- password: String</text>
+    <text class="text" x="16" y="158">- phone: String</text>
+    <text class="text" x="16" y="180">+ authenticate(): boolean</text>
+    <text class="text" x="16" y="202">+ display(): String</text>
+  </g>
+
+  <g transform="translate(70 370)">
+    <rect class="box" width="280" height="112"/>
+    <rect class="head2" width="280" height="42"/>
+    <text class="title" x="140" y="27" text-anchor="middle">Customer</text>
+    <text class="text" x="16" y="72">- address: String</text>
+    <text class="text" x="16" y="96">+ display(): String</text>
+  </g>
+
+  <g transform="translate(390 370)">
+    <rect class="box" width="280" height="136"/>
+    <rect class="head2" width="280" height="42"/>
+    <text class="title" x="140" y="27" text-anchor="middle">Admin</text>
+    <text class="text" x="16" y="72">- department: String</text>
+    <text class="text" x="16" y="96">+ authenticate(): boolean</text>
+    <text class="text" x="16" y="120">+ display(): String</text>
+  </g>
+
+  <g transform="translate(650 90)">
+    <rect class="box abstract" width="330" height="250"/>
+    <rect class="head" width="330" height="58"/>
+    <text class="stereo" x="165" y="22" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+    <text class="title" x="165" y="44" text-anchor="middle">Vendor</text>
+    <text class="text" x="16" y="86">- id: String</text>
+    <text class="text" x="16" y="108">- name: String</text>
+    <text class="text" x="16" y="130">- category: String</text>
+    <text class="text" x="16" y="152">- phone: String</text>
+    <text class="text" x="16" y="174">- location: String</text>
+    <text class="text" x="16" y="196">- packagePrice: double</text>
+    <text class="text" x="16" y="218">+ getPackageDescription(): String</text>
+    <text class="text" x="16" y="240">+ calculateFinalPrice(): double</text>
+  </g>
+
+  <g transform="translate(520 410)">
+    <rect class="box" width="225" height="82"/>
+    <rect class="head2" width="225" height="38"/>
+    <text class="title" x="112.5" y="25" text-anchor="middle">Photographer</text>
+    <text class="text" x="14" y="64">+ getPackageDescription()</text>
+  </g>
+
+  <g transform="translate(785 410)">
+    <rect class="box" width="225" height="82"/>
+    <rect class="head2" width="225" height="38"/>
+    <text class="title" x="112.5" y="25" text-anchor="middle">Catering</text>
+    <text class="text" x="14" y="64">+ getPackageDescription()</text>
+  </g>
+
+  <g transform="translate(520 535)">
+    <rect class="box" width="225" height="82"/>
+    <rect class="head2" width="225" height="38"/>
+    <text class="title" x="112.5" y="25" text-anchor="middle">Decoration</text>
+    <text class="text" x="14" y="64">+ getPackageDescription()</text>
+  </g>
+
+  <g transform="translate(785 535)">
+    <rect class="box" width="225" height="82"/>
+    <rect class="head2" width="225" height="38"/>
+    <text class="title" x="112.5" y="25" text-anchor="middle">MusicBand</text>
+    <text class="text" x="14" y="64">+ getPackageDescription()</text>
+  </g>
+
+  <g transform="translate(70 665)">
+    <rect class="box" width="300" height="184"/>
+    <rect class="head" width="300" height="42"/>
+    <text class="title" x="150" y="27" text-anchor="middle">WeddingEvent</text>
+    <text class="text" x="16" y="70">- id: String</text>
+    <text class="text" x="16" y="92">- customerId: String</text>
+    <text class="text" x="16" y="114">- date: String</text>
+    <text class="text" x="16" y="136">- venue: String</text>
+    <text class="text" x="16" y="158">- guestCount: int</text>
+    <text class="text" x="16" y="180">+ display(): String</text>
+  </g>
+
+  <g transform="translate(480 700)">
+    <rect class="box" width="300" height="172"/>
+    <rect class="head" width="300" height="42"/>
+    <text class="title" x="150" y="27" text-anchor="middle">Booking</text>
+    <text class="text" x="16" y="70">- id: String</text>
+    <text class="text" x="16" y="92">- customerId: String</text>
+    <text class="text" x="16" y="114">- eventId: String</text>
+    <text class="text" x="16" y="136">- vendorId: String</text>
+    <text class="text" x="16" y="158">+ isConfirmed(): boolean</text>
+  </g>
+
+  <g transform="translate(890 700)">
+    <rect class="box" width="310" height="198"/>
+    <rect class="head" width="310" height="42"/>
+    <text class="title" x="155" y="27" text-anchor="middle">Payment</text>
+    <text class="text" x="16" y="70">- id: String</text>
+    <text class="text" x="16" y="92">- customerId: String</text>
+    <text class="text" x="16" y="114">- bookingId: String</text>
+    <text class="text" x="16" y="136">- amount: double</text>
+    <text class="text" x="16" y="158">+ calculateTotal(): double</text>
+    <text class="text" x="16" y="180">+ invoiceLine(): String</text>
+  </g>
+
+  <g transform="translate(1280 680)">
+    <rect class="box interface" width="250" height="108"/>
+    <rect class="head" width="250" height="56"/>
+    <text class="stereo" x="125" y="21" text-anchor="middle">&lt;&lt;interface&gt;&gt;</text>
+    <text class="title" x="125" y="43" text-anchor="middle">Payable</text>
+    <text class="text" x="16" y="86">+ calculateTotal(): double</text>
+  </g>
+
+  <g transform="translate(1245 875)">
+    <rect class="box" width="300" height="154"/>
+    <rect class="head" width="300" height="42"/>
+    <text class="title" x="150" y="27" text-anchor="middle">Budget</text>
+    <text class="text" x="16" y="70">- customerId: String</text>
+    <text class="text" x="16" y="92">- plannedAmount: double</text>
+    <text class="text" x="16" y="114">- payments: List&lt;Payment&gt;</text>
+    <text class="text" x="16" y="138">+ remainingAmount(): double</text>
+  </g>
+
+  <g transform="translate(70 950)">
+    <rect class="box" width="330" height="198"/>
+    <rect class="head" width="330" height="42"/>
+    <text class="title" x="165" y="27" text-anchor="middle">Feedback</text>
+    <text class="text" x="16" y="70">- id: String</text>
+    <text class="text" x="16" y="92">- customerId: String</text>
+    <text class="text" x="16" y="114">- name: String</text>
+    <text class="text" x="16" y="136">- email: String</text>
+    <text class="text" x="16" y="158">- rating: int</text>
+    <text class="text" x="16" y="180">+ getDisplayText(): String</text>
+  </g>
+
+  <path class="rel" d="M 210 370 L 210 300" marker-end="url(#triangle)"/>
+  <path class="rel" d="M 530 370 C 530 310 350 300 240 300" marker-end="url(#triangle)"/>
+  <path class="rel" d="M 632 410 C 655 365 690 345 760 340" marker-end="url(#triangle)"/>
+  <path class="rel" d="M 898 410 C 892 365 870 345 842 340" marker-end="url(#triangle)"/>
+  <path class="rel" d="M 632 535 C 645 445 700 366 773 340" marker-end="url(#triangle)"/>
+  <path class="rel" d="M 898 535 C 894 445 867 366 837 340" marker-end="url(#triangle)"/>
+  <path class="rel dash" d="M 1200 770 L 1280 735" marker-end="url(#triangle)"/>
+  <path class="rel dash" d="M 1395 875 L 1405 788" marker-end="url(#triangle)"/>
+
+  <path class="rel" d="M 210 482 L 210 665" marker-start="url(#diamond)"/>
+  <text class="label" x="225" y="590">1 owns *</text>
+  <path class="rel" d="M 350 437 C 480 485 575 600 615 700" marker-start="url(#diamond)"/>
+  <text class="label" x="494" y="568">1 creates *</text>
+  <path class="rel" d="M 670 786 L 890 786" marker-start="url(#diamond)"/>
+  <text class="label" x="745" y="770">1 billed by *</text>
+  <path class="rel" d="M 980 215 C 1145 355 1120 610 1045 700" marker-start="url(#diamond)"/>
+  <text class="label" x="1110" y="455">1 assigned *</text>
+  <path class="rel" d="M 1045 898 C 1115 970 1190 975 1245 952" marker-start="url(#diamond)"/>
+  <text class="label" x="1117" y="1010">1 tracks *</text>
+  <path class="rel" d="M 370 757 L 480 786" marker-start="url(#diamond)"/>
+  <text class="label" x="394" y="745">1 scheduled for *</text>
+  <path class="rel" d="M 245 482 C 320 680 300 835 235 950" marker-start="url(#diamond)"/>
+  <text class="label" x="292" y="910">1 submits *</text>
+  <path class="rel" d="M 350 460 C 610 610 795 655 943 700" marker-start="url(#diamond)"/>
+  <text class="label" x="685" y="622">1 pays *</text>
+</svg>
